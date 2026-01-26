@@ -1,3 +1,5 @@
+import { FaWifi } from "react-icons/fa";
+
 const navLinks = [
   {
     id: 1,
