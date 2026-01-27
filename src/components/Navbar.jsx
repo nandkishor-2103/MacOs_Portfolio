@@ -1,41 +1,37 @@
-import dayjs from "dayjs"
-import { navIcons, navLinks } from "#constants/index"
+import dayjs from 'dayjs';
+import { navIcons, navLinks } from '#constants/index';
 
 const Navbar = () => {
   return (
     <nav>
       <div>
-        <img src="/images/logo.svg" alt="logo" className="w-3"/>
-        <p className="text-md font-bold ">Nandkishor's Portfolio</p>
+        <img src='/images/logo.svg' alt='logo' className='w-3' />
+        <p className='text-md font-bold '>Nandkishor's Portfolio</p>
 
         <ul>
-          {
-            navLinks.map((item) => (
-              <li key={item.id}>
-                <p>{item.name}</p>
-              </li>
-            ))
-          }
+          {navLinks.map((item) => (
+            <li key={item.id}>
+              <p>{item.name}</p>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div>
         <ul>
-          {
-            navIcons.map(({id, img}) => (
-              <li key={id}>
-                <img src={img} className="icon"  alt={`icon-${id}`} />
-              </li>
-            ))
-          }
+          {navIcons.map(({ id, img }) => (
+            <li key={id}>
+              <img src={img} className='icon' alt={`icon-${id}`} />
+            </li>
+          ))}
         </ul>
 
         <time>
-          {dayjs().format('ddd MMM D h:mm A')}
+          {dayjs().format('ddd MMM D hh:mm A')}
         </time>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
