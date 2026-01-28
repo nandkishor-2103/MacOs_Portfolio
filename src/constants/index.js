@@ -148,7 +148,7 @@ const socials = [
     text: 'Twitter/X',
     icon: '/icons/twitter.svg',
     bg: '#ff866b',
-    link: 'https://x.com/jsmasterypro',
+    link: 'https://x.com/?lang=en',
   },
   {
     id: 4,

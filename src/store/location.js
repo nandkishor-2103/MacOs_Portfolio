@@ -8,8 +8,12 @@ const useLocationStore = create(
   immer((set) => ({
     activeLocation: DEFAULT_LOCATION,
 
-    setActiveLocation: (location = null) =>
+    setActiveLocation: (location) =>
       set((state) => {
+        // Ignore accidental undefined calls
+        if (location === undefined) return;
+
+        // Allow null or valid location
         state.activeLocation = location;
       }),
 
