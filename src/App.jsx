@@ -19,7 +19,7 @@ const App = () => {
     return (
         <main>
             <Navbar/>
-            <GlobalSearch />
+            <GlobalSearch/>
             <Welcome/>
             <Dock/>
 

@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import dayjs from 'dayjs';
-import { navIcons, navLinks } from '#constants/index';
+import {navIcons, navLinks} from '#constants/index';
 import useWindowStore from '#store/window';
 
 const Navbar = () => {
-    const { openWindow, toggleSearch } = useWindowStore();
+    const {openWindow, toggleSearch} = useWindowStore();
     const [time, setTime] = useState(dayjs().format('ddd D MMM hh:mm A'));
     const [isUserHovered, setIsUserHovered] = useState(false);
 
@@ -32,7 +32,7 @@ const Navbar = () => {
     return (
         <nav>
             <div className="flex items-center gap-5">
-                <img src='/images/logo.svg' alt='logo' className='w-3' />
+                <img src='/images/logo.svg' alt='logo' className='w-3'/>
                 <p className='text-md font-bold '>Nandkishor's Portfolio</p>
 
                 <ul className="flex items-center gap-5 max-sm:hidden">
@@ -46,7 +46,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-5">
                 <ul className="flex items-center gap-5">
-                    {navIcons.map(({ id, img }) => (
+                    {navIcons.map(({id, img}) => (
                         <li
                             key={id}
                             className="relative flex items-center justify-center"
@@ -64,7 +64,8 @@ const Navbar = () => {
 
                             {/* User Hover Name Tooltip */}
                             {id === 3 && isUserHovered && (
-                                <div className="absolute top-8 right-0 bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded shadow-lg border border-white/10 whitespace-nowrap">
+                                <div
+                                    className="absolute top-8 right-0 bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded shadow-lg border border-white/10 whitespace-nowrap">
                                     Nandkishor Mandal
                                 </div>
                             )}

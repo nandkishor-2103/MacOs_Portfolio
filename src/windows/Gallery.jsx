@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import WindowControls from '#components/WindowControls';
-import { photosLinks } from '#constants/index';
+import {photosLinks} from '#constants/index';
 import WindowWrapper from '#hoc/WindowWrapper';
 import useWindowStore from '#store/window';
-import { Trash2 } from 'lucide-react'; // Delete icon ke liye
+import {Trash2} from 'lucide-react'; // Delete icon ke liye
 import clsx from 'clsx';
 
 const Gallery = () => {
     // Store se galleryData aur moveToTrash function nikaalein
-    const { openWindow, galleryData, moveToTrash } = useWindowStore();
+    const {openWindow, galleryData, moveToTrash} = useWindowStore();
     const [activeTab, setActiveTab] = useState(1);
 
     // Filtered photos ab store ke 'galleryData' se aayengi
@@ -20,7 +20,7 @@ const Gallery = () => {
     return (
         <>
             <div id='window-header'>
-                <WindowControls target='photos' />
+                <WindowControls target='photos'/>
                 <h2>Photos</h2>
             </div>
 
@@ -37,7 +37,7 @@ const Gallery = () => {
                                     activeTab === link.id ? '!bg-blue-100 !text-blue-700' : '!bg-transparent !text-gray-700'
                                 )}
                             >
-                                <img src={link.icon} alt={link.title} />
+                                <img src={link.icon} alt={link.title}/>
                                 <p>{link.title}</p>
                             </li>
                         ))}
@@ -56,7 +56,7 @@ const Gallery = () => {
                                     imageUrl: item.img
                                 })}
                             >
-                                <img src={item.img} alt={`Photo ${item.id}`} />
+                                <img src={item.img} alt={`Photo ${item.id}`}/>
 
                                 {/* Delete Button: Hover karne par dikhega */}
                                 <button
@@ -67,7 +67,7 @@ const Gallery = () => {
                                     className="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-white"
                                     title="Move to Trash"
                                 >
-                                    <Trash2 size={14} />
+                                    <Trash2 size={14}/>
                                 </button>
                             </li>
                         ))}
