@@ -1,10 +1,10 @@
-import {useState, useEffect, useRef} from 'react';
-import {Search as SearchIcon} from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Search as SearchIcon } from 'lucide-react';
 import useWindowStore from '#store/window';
-import {searchItems} from '#constants/index';
+import { searchItems } from '#constants/index'; // Dedicated data set import karein
 
 const GlobalSearch = () => {
-    const {isSearchOpen, setSearch, openWindow} = useWindowStore();
+    const { isSearchOpen, setSearch, openWindow } = useWindowStore();
     const [query, setQuery] = useState('');
     const [selectedIndex, setSelectedIndex] = useState(0);
     const inputRef = useRef(null);
@@ -56,7 +56,7 @@ const GlobalSearch = () => {
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center p-4 gap-4">
-                    <SearchIcon size={24} className="text-gray-500"/>
+                    <SearchIcon size={24} className="text-gray-500" />
                     <input
                         ref={inputRef}
                         type="text"
@@ -86,10 +86,9 @@ const GlobalSearch = () => {
                                     }}
                                 >
                                     {/* Dedicated Icon Rendering */}
-                                    <div
-                                        className={`size-10 rounded-lg flex items-center justify-center overflow-hidden shadow-sm ${
-                                            selectedIndex === index ? 'bg-white/20' : 'bg-gray-100/50'
-                                        }`}>
+                                    <div className={`size-10 rounded-lg flex items-center justify-center overflow-hidden shadow-sm ${
+                                        selectedIndex === index ? 'bg-white/20' : 'bg-gray-100/50'
+                                    }`}>
                                         <img
                                             src={item.icon}
                                             alt={item.name}

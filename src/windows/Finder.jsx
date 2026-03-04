@@ -1,5 +1,5 @@
 import WindowControls from '#components/WindowControls';
-import {locations} from '#constants/index';
+import {locations, dockApps} from '#constants/index';
 import WindowWrapper from '#hoc/WindowWrapper';
 import useLocationStore from '#store/location';
 import useWindowStore from '#store/window';
@@ -43,7 +43,9 @@ const Finder = () => {
         <>
             <div id='window-header'>
                 <WindowControls target='finder'/>
+                <h2>{dockApps[0].name}</h2>
                 <Search className='icon'/>
+
             </div>
 
             <div className='bg-white flex h-full'>

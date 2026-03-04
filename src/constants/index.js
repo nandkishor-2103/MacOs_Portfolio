@@ -72,16 +72,16 @@ const dockApps = [
 
 const searchItems = [
     // Apps from Dock
-    { id: 'finder-app', name: 'Portfolio', icon: '/images/finder.png', type: 'finder' },
-    { id: 'safari-app', name: 'Articles', icon: '/images/safari.png', type: 'safari' },
-    { id: 'photos-app', name: 'Gallery', icon: '/images/photos.png', type: 'photos' },
-    { id: 'contact-app', name: 'Contact', icon: '/images/contact.png', type: 'contact' },
-    { id: 'skills-terminal', name: 'Skills', icon: '/images/terminal.png', type: 'terminal' },
-    { id: 'trash-app', name: 'Archive', icon: '/images/trash.png', type: 'trash' },
+    {id: 'finder-app', name: 'Portfolio', icon: '/images/finder.png', type: 'finder'},
+    {id: 'safari-app', name: 'Articles', icon: '/images/safari.png', type: 'safari'},
+    {id: 'photos-app', name: 'Gallery', icon: '/images/photos.png', type: 'photos'},
+    {id: 'contact-app', name: 'Contact', icon: '/images/contact.png', type: 'contact'},
+    {id: 'skills-terminal', name: 'Skills', icon: '/images/terminal.png', type: 'terminal'},
+    {id: 'trash-app', name: 'Archive', icon: '/images/trash.png', type: 'trash'},
 
     // Links from Navbar
-    { id: 'resume-app', name: 'Resume', icon: '/images/resume.png', type: 'resume' },
-    { id: 'terminal-app', name: 'Terminal', icon: '/images/terminal.png', type: 'terminal' },
+    {id: 'resume-app', name: 'Resume', icon: '/images/resume.png', type: 'resume'},
+    {id: 'terminal-app', name: 'Terminal', icon: '/images/terminal.png', type: 'terminal'},
 ];
 
 const blogPosts = [
@@ -220,6 +220,19 @@ const gallery = [
     {id: 13, img: '/images/fav3.png', category: 5},
 ];
 
+// Default sizes and positions for each window export
+const windowDefaults = {
+    safari: { width: 900, height: 600, x: 120, y: 80 },
+    terminal: { width: 550, height: 450, x: 80, y: 60 },
+    contact: { width: 700, height: 400, x: 200, y: 100 },
+    photos: { width: 800, height: 445, x: 150, y: 120 },
+    resume: { width: 620, height: 650, x: 250, y: 60 },
+    finder: { width: 800, height: 500, x: 100, y: 100 },
+    txtfile: { width: 400, height: 300, x: 300, y: 150 },
+    imgfile: { width: 600, height: 500, x: 180, y: 120 },
+};
+
+
 export {
     navLinks,
     navIcons,
@@ -229,7 +242,8 @@ export {
     socials,
     photosLinks,
     gallery,
-    searchItems
+    searchItems,
+    windowDefaults
 };
 
 const WORK_LOCATION = {

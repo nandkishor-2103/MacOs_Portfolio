@@ -2,13 +2,14 @@ import useWindowStore from '#store/window';
 import {useGSAP} from '@gsap/react';
 import gsap from 'gsap';
 import {useLayoutEffect, useRef} from 'react';
-import {Draggable} from 'gsap/all';
+import {Rnd} from 'react-rnd';
+import {windowDefaults} from '#constants';
 
 const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
         const {focusWindow, windows} = useWindowStore();
         const {isOpen, zIndex} = windows[windowKey];
-        const ref = useRef(null);
+        const ref = useRef(null); // ref for the inner section
 
         // Animation when window opens
         useGSAP(() => {
@@ -24,18 +25,6 @@ const WindowWrapper = (Component, windowKey) => {
             );
         }, [isOpen]);
 
-        // Draggable functionality
-        useGSAP(() => {
-            const el = ref.current;
-            if (!el) return;
-
-            const [instance] = Draggable.create(el, {
-                onPress: () => focusWindow(windowKey),
-            });
-
-            return () => instance.kill();
-        }, []);
-
         // Display control
         useLayoutEffect(() => {
             const el = ref.current;
@@ -43,10 +32,18 @@ const WindowWrapper = (Component, windowKey) => {
             el.style.display = isOpen ? 'block' : 'none';
         }, [isOpen]);
 
+        if (!isOpen) return null;
+
         return (
-            <section id={windowKey} ref={ref} style={{zIndex}} className='absolute'>
-                <Component {...props} />
-            </section>
+            <Rnd id={windowKey} default={windowDefaults[windowKey] || {x: 100, y: 100, width: 600, height: 400}}
+                 minWidth={300} minHeight={200} bounds="main" style={{zIndex}}
+                 onDragStart={() => focusWindow(windowKey)}
+                 onResizeStart={() => focusWindow(windowKey)}
+            >
+                <section ref={ref} className="w-full h-full">
+                    <Component {...props} />
+                </section>
+            </Rnd>
         );
     };
 
