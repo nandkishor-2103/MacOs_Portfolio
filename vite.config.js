@@ -5,7 +5,7 @@ import {resolve, dirname} from 'path';
 import {fileURLToPath} from 'url';
 
 export default defineConfig({
-    plugins: [react(), tailwindcss()]
+    plugins: [react(), tailwindcss()],
     resolve: {
         alias: {
             '#components': resolve(
