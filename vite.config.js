@@ -5,8 +5,7 @@ import {resolve, dirname} from 'path';
 import {fileURLToPath} from 'url';
 
 export default defineConfig({
-    plugins: [react(), tailwindcss()],
-    base: "/MacOs_Portfolio",
+    plugins: [react(), tailwindcss()]
     resolve: {
         alias: {
             '#components': resolve(
