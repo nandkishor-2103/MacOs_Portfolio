@@ -10,7 +10,7 @@ const Contact = () => {
         <h2>{dockApps[3].name}</h2>
       </div>
       <div className='p-5 space-y-5'>
-        <img src="/images/profile.jpg" alt="Nandkishor" className='w-20 rounded-full' />
+        <img src="/images/profile-1.jpg" alt="Nandkishor" className='w-20 rounded-full' />
         <h3>Let's Connect</h3>
         <p>Got an idea, found a bug, or just want to talk frontend and full-stack? I’m in.</p>
         <p className='font-medium'>nandkishormandalbk@gmail.com</p>

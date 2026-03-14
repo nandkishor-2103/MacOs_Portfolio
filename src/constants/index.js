@@ -202,8 +202,8 @@ const gallery = [
     {id: 3, img: '/images/gal3.png', category: 1},
 
     // --- Category 2: Memories ---
-    {id: 4, img: '/images/mem1.png', category: 2},
-    {id: 5, img: '/images/mem2.png', category: 2},
+    {id: 4, img: '/images/mem6.png', category: 2},
+    {id: 5, img: '/images/mem7.png', category: 2},
     {id: 6, img: '/images/mem3.png', category: 2},
 
     // --- Category 3: Places ---
@@ -213,11 +213,12 @@ const gallery = [
     // --- Category 4: People ---
     {id: 9, img: '/images/people1.png', category: 4},
     {id: 10, img: '/images/people2.png', category: 4},
+    {id: 11, img: '/images/people3.png', category: 4},
 
     // --- Category 5: Favorites ---
-    {id: 11, img: '/images/fav1.png', category: 5},
-    {id: 12, img: '/images/fav2.png', category: 5},
-    {id: 13, img: '/images/fav3.png', category: 5},
+    {id: 12, img: '/images/fav1.png', category: 5},
+    {id: 13, img: '/images/fav2.png', category: 5},
+    {id: 14, img: '/images/fav3.png', category: 5},
 ];
 
 // Default sizes and positions for each window export
